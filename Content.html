@@ -3,16 +3,19 @@
 <head>
     <link rel="stylesheet" href="Style.css">
     <meta name="Standard" content="width = device-width, initial-scale = 1">
-    <title> Meine Lieblingsspiele </title>
+    <title> Meine Urlaubstage </title>
 </head>
 <body>
     <div class="container-main">
         <div class="box">
-            <h3> Liste der beliebtesten Videospiele </h3>
+            <h3> Liste deiner Urlaubstage </h3>
+            <form>
             <div class="row">
-                <input type="text" id="search" placeholder="Dein Lieblingsspiel">
-                <button>Spielen !</button>
+                <input type="text" id="search" name="Datum" placeholder="Datum">
+                <input type="text" id="search" name="Name" placeholder="Name">
+                <button type="submit">Beantragen</button>
             </div>
+            </form>
             <ul id="container-list">
               <!--  <li class="Auswahl">Mario & Sonic bei den Olympischen Winterspielen</li>
                 <li>Minecraft</li>
@@ -20,7 +23,8 @@
             </ul>
         </div>
     </div>
-<script src="Backend.js"></script>
+<script src="Backend.js">
+</script>
 </body>
 <footer>
 
