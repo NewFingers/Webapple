@@ -25,3 +25,18 @@
     color: #00aae4;
 
 }
+.row{
+    margin-bottom: 20px;
+    padding-left: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 35px;
+    color: #dfe2e9;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    color: transparent;
+} 
