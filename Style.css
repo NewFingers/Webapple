@@ -41,3 +41,13 @@ input{
     outline: none;
     background: transparent;
 } 
+button{
+    padding: 16px 50px;
+    border: none;
+    outline: none;
+    border-radius: 35px;
+    font-size: 15px;
+    cursor: pointer;
+    background: purple;
+    color: #fff;
+}
