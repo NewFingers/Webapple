@@ -70,3 +70,10 @@ ul li::before{
     top: 10px;
     left: 8px;
 }
+ul li.Auswahl{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.Auswahl::before{
+    background-image: url(Bilder/checked.jpg.png);
+}
