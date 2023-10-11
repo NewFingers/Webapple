@@ -57,6 +57,7 @@ ul li{
     cursor: pointer;
     list-style: none;
     user-select: none;
+    position: relative;
 }
 ul li::before{
     height: 20px;
@@ -66,4 +67,7 @@ ul li::before{
     content: ' ';
     background-image: url(Bilder/checkbox.png);
     background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 8px;
 }
