@@ -10,11 +10,18 @@
     padding: 12px;
     background: #87ceeb;
 }
-.title{
+.box{
     width: 100%;
     max-width: 640px;
     margin: 50px auto 30px;
     padding: 20px 20px 40px;
     border-radius: 5px;
     background: #fff;
+}
+.box h3{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: #00aae4;
+
 }
