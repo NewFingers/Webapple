@@ -58,3 +58,11 @@ ul li{
     list-style: none;
     user-select: none;
 }
+ul li::before{
+    height: 20px;
+    width: 20px;
+    position:absolute;
+    border-radius: 45%;
+    content: ' ';
+    background-image: url(Bilder/checkbox.png);
+}
