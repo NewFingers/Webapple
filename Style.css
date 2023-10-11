@@ -51,3 +51,10 @@ button{
     background: purple;
     color: #fff;
 }
+ul li{
+    padding: 10px 8px 10px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+}
