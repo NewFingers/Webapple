@@ -32,11 +32,12 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 35px;
-    color: #dfe2e9;
+    background: beige;
 }
 input{
+    padding: 10px;
     flex: 1;
     border: none;
     outline: none;
-    color: transparent;
+    background: transparent;
 } 
