@@ -5,49 +5,9 @@ search.addEventListener('submit', (sub) => {
     const obj = Object.fromEntries(fd);
     console.log(obj);
     const json = JSON.stringify(obj);
-    
     console.log(json);
-
-    
-
 })
 */
-
-
-
-const search = document.getElementById("search");
-const conlist = document.getElementById("container-list");
-
-fetch ('https://date.nager.at/api/v3/PublicHolidays/2023/DE')
-.then(res => {
-  return res.json(); 
-})
-.then(daten => {
-   daten.forEach(tag => {
-       const listitem = `${tag.date} ${tag.localName}`;
-       let li = document.createElement("li");
-        li.innerHTML = listitem;
-        conlist.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
-   }); 
-});
-
-function addTask() {
-    if (search.value === "") {
-        alert ("Das Eingabefeld ist leer")
-    } else {
-        let li = document.createElement("li");
-        li.innerHTML = search.value;
-        conlist.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
-    }
-    search.value = " ";
-
-}
 /*
 fetch ('https://date.nager.at/api/v3/PublicHolidays/2023/DE')
 .then(res => {
@@ -61,3 +21,82 @@ fetch ('https://date.nager.at/api/v3/PublicHolidays/2023/DE')
 }); 
 
 */
+
+const search = document.getElementById("search");
+const conlist = document.getElementById("container-list");
+// var zahl = "eins";
+
+function counter() {
+    zahl = "oft";
+    localStorage.setItem("besuch",zahl);
+}
+
+function addTask() {
+    if (search.value === "") {
+        alert ("Das Eingabefeld ist leer")
+    } else {
+        let li = document.createElement("li");
+        li.innerHTML = search.value;
+        conlist.appendChild(li);
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
+    }
+    search.value = " ";
+    saveData();
+}
+
+function saveData() {
+    localStorage.setItem("data", conlist.innerHTML);
+}
+
+function showData() {
+    conlist.innerHTML = localStorage.getItem("data");
+}
+
+conlist.addEventListener("click", function(a) {
+    if (a.target.tagName === "LI") {
+        a.target.classList.toggle("Auswahl");  
+        saveData();
+    } else if (a.target.tagName === "SPAN") {
+        a.target.parentElement.remove();
+        saveData();
+    }
+}, false);
+
+
+function init() {
+    init = empty();
+    fetch ('https://date.nager.at/api/v3/PublicHolidays/2023/DE')
+    .then(res => {
+    return res.json(); 
+    })
+    .then(daten => {
+    daten.forEach(tag => {
+       const listitem = `${tag.date} ${tag.localName}`;
+       let li = document.createElement("li");
+        li.innerHTML = listitem;
+        conlist.appendChild(li);
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        li.appendChild(span);
+        }); 
+    }); 
+}
+
+
+function empty() {
+}
+
+//localStorage.setItem("besuch", zahl);
+//console.log(localStorage.getItem("besuch"));
+//counter();
+  
+init();
+//console.log(localStorage.getItem("besuch"));
+//console.log(zahl);
+//} else {
+showData();
+//console.log("showData");
+//}
+
